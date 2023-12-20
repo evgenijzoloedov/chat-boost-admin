@@ -48,7 +48,7 @@ const onCopy = async ()=> {
 }
 
   const generateScript = ()=>{
-    loadingScriptFn().then(res=>setScript(res))
+    loadingScriptFn().then((res:any)=>setScript(res))
   }
 
 

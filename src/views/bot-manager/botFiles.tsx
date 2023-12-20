@@ -7,7 +7,9 @@ import Box from "@mui/material/Box";
 import Button, {ButtonProps} from "@mui/material/Button";
 import {File} from "../../@core/types/files";
 import Grid from '@mui/material/Grid'
-import { v4 } from "uuid";
+import {styled} from "@mui/material/styles";
+import {format} from "date-fns";
+import {uuidv4} from "../../@core/utils/uuid";
 
 function formatBytes(bytes:number, decimals = 2) {
   if (!+bytes) return '0 Bytes'
@@ -18,8 +20,7 @@ function formatBytes(bytes:number, decimals = 2) {
 
 return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
 }
-import {styled} from "@mui/material/styles";
-import {format} from "date-fns";
+
 
 const ButtonStyled = styled(Button)<ButtonProps & { component?: ElementType; htmlFor?: string }>(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
@@ -106,7 +107,7 @@ function Files (){
 
 
       const file:File = {
-          id:v4(),
+          id:uuidv4(),
         date:new Date(),
         name:loadedFile.name,
         size:loadedFile.size

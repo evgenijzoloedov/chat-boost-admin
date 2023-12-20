@@ -27,7 +27,7 @@ type StepComponentProps = {
 function StepComponent({onChangeStep,step}:StepComponentProps){
 
 
-  const onChange = (field:Fileds,e:ChangeEvent<HTMLInputElement>) => {
+  const onChange = (field:Fileds,e:ChangeEvent<HTMLInputElement |  HTMLTextAreaElement>) => {
     onChangeStep(step.id,field, e.target.value)
   }
 
@@ -137,10 +137,7 @@ export const ManageSteps = () => {
       Управлением шагами продаж
     </Typography>
 
-
     <Steps onChangeStep={onChangeStep} steps={steps} loading={loadingList}/>
-
-
 
       <Button onClick={onSubmit} disabled={loading}>
 

@@ -8,7 +8,7 @@ const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 export default ReactApexChart
 
 export  function BaseOptionChart(): ApexOptions {
-  const theme = useTheme();
+  const theme:any = useTheme();
 
   const LABEL_TOTAL = {
     show: true,
@@ -44,6 +44,7 @@ export  function BaseOptionChart(): ApexOptions {
     chart: {
       toolbar: { show: false },
       zoom: { enabled: false },
+
       // animations: { enabled: false },
       foreColor: theme.palette.text.disabled,
       fontFamily: theme.typography.fontFamily,
@@ -135,6 +136,7 @@ export  function BaseOptionChart(): ApexOptions {
         columnWidth: '28%',
         borderRadius: 4,
       },
+
       // Pie + Donut
       pie: {
         donut: {
@@ -145,6 +147,7 @@ export  function BaseOptionChart(): ApexOptions {
           },
         },
       },
+
       // Radialbar
       radialBar: {
         track: {
@@ -156,6 +159,7 @@ export  function BaseOptionChart(): ApexOptions {
           total: LABEL_TOTAL,
         },
       },
+
       // Radar
       radar: {
         polygons: {
@@ -164,6 +168,7 @@ export  function BaseOptionChart(): ApexOptions {
           connectorColors: theme.palette.divider,
         },
       },
+
       // polarArea
       polarArea: {
         rings: {

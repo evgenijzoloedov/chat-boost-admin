@@ -8,50 +8,45 @@ import {DialogsStatistics} from "../../views/bot-dashboard/DialogsStatistics";
 
 
 
-
-
-
-
-
-function Base({text, title}) {
-  return <Card >
-    <CardContent>
-      <Box sx={{ display: 'flex', flexDirection:"column",padding:5, alignItems: 'center', justifyContent: 'center' }} >
-        <Typography variant="h3">
-
-          {title}
-
-        </Typography>
-
-        <Typography variant={"h6"}>
-          {text}
-        </Typography>
-      </Box>
-    </CardContent>
-  </Card>
-}
-
-
-
-function Engineer(){
-
-
-  return <Card >
-    <CardContent>
-      <Box sx={{ display: 'flex', flexDirection:"column",padding:5, alignItems: 'center', justifyContent: 'center' }} >
-        <Typography variant="h3">
-
-          25,8%
-
-        </Typography>
-
-        <Typography variant={"h6"}>
-        Переведено на менеджера
-        </Typography>
-      </Box>
-    </CardContent>
-  </Card>
-}
+// function Base({text, title}) {
+//   return <Card >
+//     <CardContent>
+//       <Box sx={{ display: 'flex', flexDirection:"column",padding:5, alignItems: 'center', justifyContent: 'center' }} >
+//         <Typography variant="h3">
+//
+//           {title}
+//
+//         </Typography>
+//
+//         <Typography variant={"h6"}>
+//           {text}
+//         </Typography>
+//       </Box>
+//     </CardContent>
+//   </Card>
+// }
+//
+//
+//
+// function Engineer(){
+//
+//
+//   return <Card >
+//     <CardContent>
+//       <Box sx={{ display: 'flex', flexDirection:"column",padding:5, alignItems: 'center', justifyContent: 'center' }} >
+//         <Typography variant="h3">
+//
+//           25,8%
+//
+//         </Typography>
+//
+//         <Typography variant={"h6"}>
+//         Переведено на менеджера
+//         </Typography>
+//       </Box>
+//     </CardContent>
+//   </Card>
+// }
 
 
 

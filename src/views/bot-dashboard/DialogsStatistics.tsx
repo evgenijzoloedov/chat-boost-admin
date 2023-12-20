@@ -5,28 +5,31 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Rates from "./Rate";
 import {useTheme} from "@mui/material/styles";
+import {AsyncState} from "react-use/lib/useAsyncFn";
+import {DialogsRanking} from "../../@core/types/statistics";
 
 
 
-function calculatePercent(a, b){
+function calculatePercent(a:number, b:number){
   return a/b *100
 }
 
 export const DialogsStatistics = () => {
-  const theme = useTheme();
+  const theme:any = useTheme();
 
 
   const chart = theme.palette.chart
-  const {loading,value,error} = useAsync(async ()=>{
+  const result:AsyncState<DialogsRanking> = useAsync(async ()=>{
     const result  = await statisticsService.getCreationStatistics()
 
     return result.data
   })
 
+  const value = result.value as DialogsRanking
 
 
 
-  if (loading){
+  if (result.loading){
     return <Box>
       <Typography>
 
@@ -35,8 +38,8 @@ export const DialogsStatistics = () => {
       </Typography>
     </Box>
   }
-  console.log("value: ",value)
-  const total = value['n_started_dialogues']
+
+  const total = value['n_started_dialogues'] || 0
   const failed = value['n_started_dialogues'] - value['n_succeeded_dialogues']
   const success =  value['n_succeeded_dialogues']
 
