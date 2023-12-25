@@ -39,6 +39,11 @@ export const DialogsStatistics = () => {
     </Box>
   }
 
+
+  if(result.error){
+    return <>Error</>
+  }
+
   const total = value['n_started_dialogues'] || 0
   const failed = value['n_started_dialogues'] - value['n_succeeded_dialogues']
   const success =  value['n_succeeded_dialogues']

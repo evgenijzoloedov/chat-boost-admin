@@ -21,6 +21,11 @@ const navigation = (): VerticalNavItemsType => {
       path: '/dashboard'
     },
     {
+      title: 'Управление ботом',
+      icon: AccountCogOutline,
+      path: '/bot-manager'
+    },
+    {
       title: 'Диалоги',
       icon: AccountPlusOutline,
       path: '/chats'

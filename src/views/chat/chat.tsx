@@ -3,7 +3,9 @@ import {Actor, Message} from "../../@core/types/message";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
 import {format} from "date-fns";
+import InformationOutline from "mdi-material-ui/InformationOutline";
 
 
 type ChatProps = {
@@ -31,8 +33,10 @@ function MessageComponent({message}:{message:Message}){
   return(
     <Box sx={{p:4, width:"100%",display:"flex",flexDirection:isUser?"row":"row-reverse"}}>
       <div style={{maxWidth:"75%"}}>
-        <Typography variant={"h5"} sx={{textAlign:isUser?"left":"right"}}>
-          {message.utterance}
+        <Typography variant={"h5"} sx={{textAlign:isUser?"left":"right",display:"flex", alignItems:'center', gap:4}}>
+          {message.utterance} {message.success && <Tooltip title={'Успешное сообщение'}>
+          <InformationOutline/>
+        </Tooltip>}
         </Typography>
         <div style={{display:"flex",gap:"20px", textAlign:"center",justifyContent:isUser?"start":"end"}}>
           <Typography>

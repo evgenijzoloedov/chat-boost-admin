@@ -25,6 +25,9 @@ import {BotFiles} from "../../views/bot-manager/botFiles";
 import {BotScript} from "../../views/bot-manager/botScript";
 import withPageRequiredAuth from "../../@core/context/auth/with-page-required-auth";
 import {ManageSteps} from "../../views/bot-manager/manageSteps";
+import {Prompt} from "../../views/bot-manager/prompt";
+import Poll from "mdi-material-ui/Poll";
+import HelpCircleOutline from "mdi-material-ui/HelpCircleOutline";
 
 const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
@@ -47,7 +50,8 @@ const TabName = styled('span')(({ theme }) => ({
 const TABS={
   files:'files',
   script:'script',
-  scriptManager:'scriptManager'
+  scriptManager:'scriptManager',
+  prompt:"prompt"
 }
 
 const BotSettings = () => {
@@ -92,8 +96,15 @@ const BotSettings = () => {
               </Box>
             }
           />
-
-
+          <Tab
+            value={TABS.prompt}
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <HelpCircleOutline />
+                <TabName>Обновление промптов</TabName>
+              </Box>
+            }
+          />
         </TabList>
 
         <TabPanel sx={{ p: 4 }} value={TABS.files}>
@@ -105,9 +116,9 @@ const BotSettings = () => {
         <TabPanel sx={{ p: 4 }} value={TABS.script}>
           <BotScript />
         </TabPanel>
-
-
-
+        <TabPanel sx={{ p: 4 }} value={TABS.prompt}>
+          <Prompt />
+        </TabPanel>
       </TabContext>
     </Card>
   )
