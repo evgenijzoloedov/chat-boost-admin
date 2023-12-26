@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { styled } from '@mui/material/styles';
 import { Card, CardHeader, CardProps } from '@mui/material';
-import {fNumber} from "../../@core/utils/formatNumber";
+import {fNumber, fPercent} from "../../@core/utils/formatNumber";
 import ReactApexChart, {BaseOptionChart} from "../../@core/utils/baseOptionChart";
 
 
@@ -67,7 +67,10 @@ export default function Rates({
       radialBar: {
         hollow: { size: '68%' },
         dataLabels: {
-          value: { offsetY: 16 },
+          value: {
+            offsetY: 16,
+            formatter: (val:number) => fPercent(val)
+          },
           total: {
             formatter: () => fNumber(total),
           },

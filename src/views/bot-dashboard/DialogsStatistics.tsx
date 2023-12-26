@@ -8,8 +8,6 @@ import {useTheme} from "@mui/material/styles";
 import {AsyncState} from "react-use/lib/useAsyncFn";
 import {DialogsRanking} from "../../@core/types/statistics";
 
-
-
 function calculatePercent(a:number, b:number){
   return a/b *100
 }
@@ -50,6 +48,7 @@ export const DialogsStatistics = () => {
 
 
 
+
   const successPercent = calculatePercent(success,total)
   const failedPercent = calculatePercent(failed,total)
 
@@ -58,11 +57,11 @@ export const DialogsStatistics = () => {
   return (
 
       <Rates
-        title="Реакция пользвателей"
+        title="Диалоги"
         total={total}
         chartData={[
-          { label: 'Успешных диалогов', value: successPercent },
-          { label: 'Неуспешных диалогов', value: failedPercent },
+          { label: 'Клиент выполнил целевое действие', value: successPercent },
+          { label: 'Клиент не выполнил целевое действие', value: failedPercent },
         ]}
         chartColors={[
           [chart.violet[0], chart.violet[2]],

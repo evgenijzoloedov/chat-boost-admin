@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import {DialogsStatistics} from "../../views/bot-dashboard/DialogsStatistics";
-import * as process from "process";
+
 
 
 
